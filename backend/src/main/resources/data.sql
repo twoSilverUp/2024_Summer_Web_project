@@ -1,0 +1,1 @@
+insert into users(pw, name, phone, ssn) values ('1234', 'Alice', 01012345678, 0101010101010);
