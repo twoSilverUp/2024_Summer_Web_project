@@ -1,5 +1,6 @@
 package com.example.Backend.dto;
 
+import com.example.Backend.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -13,6 +14,10 @@ public class UserDto {
     private int id;
     private String pw;
     private String name;
-    private long phone;
-    private long ssn;
+    private String phone;
+    private String ssn;
+
+    public User toEntity() {
+        return new User(id, pw, name, phone, ssn);
+    }
 }
