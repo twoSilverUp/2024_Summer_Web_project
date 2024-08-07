@@ -1,0 +1,30 @@
+package com.example.Backend.controller;
+
+import com.example.Backend.exception.UserNotFoundException;
+import com.example.Backend.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class MainApiController {
+    @Autowired
+    private UserService userService;
+    //user name 조회
+    @GetMapping("/hollo/{id}")
+    public ResponseEntity<String> name(@PathVariable int id){
+        //서비스에 위임
+        String name = userService.name(id);
+        //결과 응답
+        return ResponseEntity.status(HttpStatus.OK).body(name);
+    }
+    //예외 처리
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
+}
