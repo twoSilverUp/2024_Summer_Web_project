@@ -5,7 +5,7 @@ interface ButtonProps {
   text: string;
 }
 
-//메인 페이지 흰색 버튼
+//흰색 가로 버튼
 const MainButton: React.FC<ButtonProps> = ({ text }) => {
   return <Button>{text}</Button>;
 };
