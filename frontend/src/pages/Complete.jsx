@@ -1,4 +1,4 @@
-import './styles/complete.css';
+import '../styles/complete.css';
 
 function Complete() {
   return (

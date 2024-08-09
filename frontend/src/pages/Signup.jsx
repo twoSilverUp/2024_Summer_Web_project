@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import "./signup.css";
+import '../styles/signup.css';
 
 function Signup() {
   const [formData, setFormData] = useState({
@@ -69,9 +69,13 @@ function Signup() {
           value={this.state.identify}
           onChange={this.handleChange}
         />
-        <button className="btn" type="submit">회원가입</button>
+        <button className="btn" type="submit">
+          회원가입
+        </button>
       </form>
-      <a className="goback" href="/login">계정이 이미 있으신가요?</a>
+      <a className="goback" href="/login">
+        계정이 이미 있으신가요?
+      </a>
     </div>
   );
 }
