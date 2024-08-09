@@ -1,24 +1,18 @@
 import styled from 'styled-components';
-import ButtonList from '../components/btn-list';
-import Header from '../components/header';
+import ButtonList from '../components/ButtonList';
+import { MAIN_CONTENT_LIST } from '../components/constData';
 
-const mainContentList = [
-  '예약하고 병원에 갔을 때 진료 보기',
-  '예약 안하고 병원에 갔을 때 진료 보기',
-  '의료 증명서 발급받기',
-  '병원 키오스크로 금액 결제하기(수납)',
-  '병원 근처 약국 찾아보기',
-];
+import MainHeader from '../components/MainHeader';
 
 export default function MainPage() {
   return (
     <Wrapper>
-      <Header />
+      <MainHeader />
       <Container>
         <Title>
           김OO님, <br /> 무엇을 연습해볼까요?
         </Title>
-        <ButtonList contentList={mainContentList} />
+        <ButtonList contentList={MAIN_CONTENT_LIST} />
         <ImageContainer>
           <TeamLabel>@Team eldkiz</TeamLabel>
           <img src="images/main-image.png" />
@@ -29,7 +23,7 @@ export default function MainPage() {
 }
 
 const Wrapper = styled.div`
-  height: 50rem;
+  height: 800px;
   overflow: hidden;
 `;
 
@@ -42,16 +36,16 @@ const Container = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: 2.5rem;
-  margin-bottom: 2.5rem;
-  font-size: 1.5rem;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  font-size: 24px;
   text-align: left;
   color: white;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
-  height: 14rem;
+  height: 224px;
 `;
 
 const TeamLabel = styled.p`

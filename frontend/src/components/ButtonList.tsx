@@ -1,5 +1,5 @@
 import React from 'react';
-import MainButton from './main-btn';
+import MainButton from './MainButton';
 import styled from 'styled-components';
 interface ButtonListProps {
   contentList: Array<string>;
@@ -8,7 +8,7 @@ interface ButtonListProps {
 const ButtonList: React.FC<ButtonListProps> = ({ contentList }) => {
   //버튼 내용 입력받아 버튼 목록 생성
   const buttonList = contentList.map((content: string, index: number) => (
-    <MainButton key={index} text={content} />
+    <MainButton text={content} />
   ));
 
   return <BtnWrapper>{buttonList}</BtnWrapper>;

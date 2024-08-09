@@ -3,7 +3,6 @@ body {
   width: 360px;
   height: 800px;
   margin: 0 auto;
-  /* border: 3px solid black; */
   box-sizing: border-box;
   overflow: hidden;
 }
@@ -12,5 +11,5 @@ body {
   font-family: 'Suite';
   font-weight: normal;
   font-style: normal;
-  src: url('../fonts/SUITE-Bold.otf');
+  src: url('../assets/fonts/SUITE-Bold.otf');
 }
