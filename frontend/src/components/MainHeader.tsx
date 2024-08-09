@@ -9,13 +9,11 @@ export default function Header() {
   };
 
   return (
-    <Wrapper className="flex items-center justify-center bg-header-gray h-13">
+    <Wrapper>
       <ArrowIcon onClick={handleClick}>
         <FaArrowLeft />
       </ArrowIcon>
-      <Title className="text-center text-white font-Suite">
-        병원 키오스크 연습용 웹, 홀로서기✨
-      </Title>
+      <Title>병원 키오스크 연습용 웹, 홀로서기✨</Title>
     </Wrapper>
   );
 }
