@@ -1,4 +1,3 @@
-import React from 'react';
 import MainButton from './MainButton';
 import styled from 'styled-components';
 interface ButtonListProps {
