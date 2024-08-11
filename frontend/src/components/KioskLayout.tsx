@@ -1,15 +1,25 @@
+import { ReactNode } from 'react';
 import styled from 'styled-components';
 
 /*
 배경 깔고, 헤더 넣고, 타이틀 넣고 그 아래에 사용
 */
 
-const KioskLayout: React.FC = () => {
+interface KioskLayoutProps {
+  contentTitle: string;
+  children: ReactNode;
+}
+
+const KioskLayout: React.FC<KioskLayoutProps> = ({
+  contentTitle,
+  children,
+}) => {
   return (
     <KioskWrapper>
       <ContentWrapper>
-        <ContentTitle>Info text here</ContentTitle>
+        <ContentTitle>{contentTitle}</ContentTitle>
         {/* 이 아래로 키오스크에 들어갈 내용들~~ */}
+        {children}
       </ContentWrapper>
     </KioskWrapper>
   );
