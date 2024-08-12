@@ -22,6 +22,7 @@ const AdviceBar: React.FC<snackBarProps> = ({ advice, isOpen, onClose }) => {
       action={closeBtn}
       onClose={onClose}
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+      ContentProps={{ sx: { maxWidth: '360px' } }}
     />
   );
 };

@@ -12,7 +12,7 @@ export default function MainPage() {
         <Title>
           김OO님, <br /> 무엇을 연습해볼까요?
         </Title>
-        <ButtonList contentList={MAIN_CONTENT_LIST} />
+        <ButtonList buttonType="main" contentList={MAIN_CONTENT_LIST} />
         <ImageContainer>
           <TeamLabel>@Team eldkiz</TeamLabel>
           <img src="images/main-image.png" />
