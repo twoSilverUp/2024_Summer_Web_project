@@ -5,11 +5,13 @@ import { useParams } from 'react-router-dom';
 import KioskLayout from '../components/KioskLayout';
 import KeypadLayout from "../components/KeypadLayout";
 import { SCENE1_STEP_NAME } from '../components/constData';
+import YesNoButton from "../components/YesNoButton";
 
 const Step1 = () => {
     return (
         <div>
             <KeypadLayout />
+            <YesNoButton/>
         </div>
     );
 };
