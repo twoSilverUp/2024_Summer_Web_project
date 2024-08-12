@@ -8,6 +8,21 @@ export const MAIN_CONTENT_LIST = [
   '병원 근처 약국 찾아보기',
 ];
 
+export const SCENE1_STEP_NAME = [
+  {
+    stepTitle: '첫 번째 단계,',
+    stepSubtitle: '전화번호 입력하기',
+    stepDescription: '전화번호를 입력해주세요',
+    advice: 'page1 advice',
+  },
+  {
+    stepTitle: '첫 번째 단계,',
+    stepSubtitle: '전화번호 입력하기',
+    stepDescription: '전화번호를 입력해주세요',
+    advice: 'page2 advice',
+  },
+];
+
 export const SCENE4_STEP_NAME = [
   {
     stepTitle: '첫 번째 단계,',

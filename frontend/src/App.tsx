@@ -6,6 +6,7 @@ import Complete from './component/Complete';
 import MainPage from './pages/MainPage';
 import './styles/global.css';
 import Scene4 from './pages/Scene4';
+import Scene1 from './pages/Scene1';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/complete" element={<Complete />} />
+        <Route path="/scene1/:step" element={<Scene1 />} />
         <Route path="/scene4/:step" element={<Scene4 />} />
       </Routes>
     </Router>
