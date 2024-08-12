@@ -3,11 +3,15 @@ import styled from 'styled-components';
 
 const KeypadLayout: React.FC = () => {
     return (
-        <Keypad>
-            {['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'].map((number) => (
-                <KeypadButton key={number}>{number}</KeypadButton>
-            ))}
-        </Keypad>
+        <div>
+            <Keypad>
+                {['1', '2', '3', '4', '5', '6', '7', '8', '9'].map((number) => (
+                    <KeypadButton key={number}>{number}</KeypadButton>
+                ))}
+                <EmptySpace />
+                <KeypadButton key="0">0</KeypadButton>
+            </Keypad>
+        </div>
     );
 };
 
@@ -21,7 +25,7 @@ const Keypad = styled.div`
 `;
 
 const KeypadButton = styled.button`
-    width: 60px;
+    width: 80px; /* 가로가 더 긴 직사각형으로 변경 */
     height: 60px;
     background-color: #e0e0e0;
     border: 1px solid #ccc;
@@ -33,4 +37,10 @@ const KeypadButton = styled.button`
     &:active {
         background-color: #d0d0d0;
     }
+`;
+
+const EmptySpace = styled.div`
+    width: 80px; 
+    height: 60px;
+    background-color: transparent;
 `;
