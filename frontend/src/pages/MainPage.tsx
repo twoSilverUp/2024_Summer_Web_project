@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import ButtonList from '../components/ButtonList';
-import { MAIN_CONTENT_LIST } from '../components/constData';
+import ButtonList from '../components/common/ButtonList';
+import { MAIN_CONTENT_LIST } from '../consts/constData';
 
-import MainHeader from '../components/MainHeader';
+import MainHeader from '../components/common/MainHeader';
 
 export default function MainPage() {
   return (

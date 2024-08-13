@@ -1,6 +1,7 @@
-import { FloatingBtn, Header, KioskLayout, KeypadLayout, SCENE1_STEP_NAME } from '../components';
+import { FloatingBtn, Header, KioskLayout, KeypadLayout} from '../components';
 import { useParams, useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { SCENE1_STEP_NAME } from '../consts';
+import { Container, Title, Wrapper } from '../styles/registered/RegisteredStyle';
 
 // Step1 컴포넌트
 const Step1: React.FC = () => {
@@ -91,24 +92,3 @@ export default function Scene4() {
     );
 }
 
-const Wrapper = styled.div`
-  height: 800px;
-  overflow: hidden;
-  position: relative;
-`;
-
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  background: linear-gradient(to bottom, #878787, #15204c);
-  align-items: center;
-  height: 100%;
-`;
-
-const Title = styled.div`
-  margin-top: 40px;
-  margin-bottom: 40px;
-  font-size: 24px;
-  text-align: left;
-  color: white;
-`;

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
-import FloatingBtn from '../components/FloatingBtn';
-import Header from '../components/MainHeader';
+import FloatingBtn from '../components/common/FloatingBtn';
+import Header from '../components/common/MainHeader';
 import { useParams } from 'react-router-dom';
-import KioskLayout from '../components/KioskLayout';
-import { SCENE4_STEP_NAME } from '../components/constData';
+import KioskLayout from '../components/common/KioskLayout';
+import { SCENE4_STEP_NAME } from '../consts/constData';
 
 const Step1 = () => {
   return <h1>this is step1</h1>;
