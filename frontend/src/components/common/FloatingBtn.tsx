@@ -1,15 +1,15 @@
 import { Add, Help, Home } from '@mui/icons-material';
 import { SpeedDial, SpeedDialAction } from '@mui/material';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
 import AdviceBar from './AdviceBar';
+import styled from 'styled-components';
 
-interface floatingBtnProps {
+interface FloatingBtnProps {
   advice: string; //도움말 내용
 }
 
-const FloatingBtn: React.FC<floatingBtnProps> = ({ advice }) => {
+function FloatingBtn({ advice }: FloatingBtnProps) {
   const navigate = useNavigate();
   const goHome = () => navigate('/');
 
@@ -17,6 +17,10 @@ const FloatingBtn: React.FC<floatingBtnProps> = ({ advice }) => {
 
   const showAdvice = () => {
     setIsOpen(true);
+  };
+
+  const handleClose = () => {
+    setIsOpen(false);
   };
 
   const actions = [
@@ -36,29 +40,25 @@ const FloatingBtn: React.FC<floatingBtnProps> = ({ advice }) => {
 
   return (
     <FloatingBtnWrapper>
-      <AdviceBar
-        isOpen={isOpen}
-        advice={advice}
-        onClose={() => setIsOpen(false)}
-      />
+      <AdviceBar isOpen={isOpen} advice={advice} onClose={handleClose} />
       <SpeedDial ariaLabel="floating button" icon={<Add />}>
-        {actions.map((action) => (
+        {actions.map(({ name, icon, tooltip, act }) => (
           <SpeedDialAction
-            key={action.name}
-            icon={action.icon}
-            tooltipTitle={action.tooltip}
-            onClick={action.act}
+            key={name}
+            icon={icon}
+            tooltipTitle={tooltip}
+            onClick={act}
           />
         ))}
       </SpeedDial>
     </FloatingBtnWrapper>
   );
-};
+}
 
-const FloatingBtnWrapper = styled.div`
+export default FloatingBtn;
+
+export const FloatingBtnWrapper = styled.div`
   position: absolute;
   bottom: 20px;
   right: 20px;
 `;
-
-export default FloatingBtn;

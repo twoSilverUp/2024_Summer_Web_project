@@ -3,9 +3,8 @@ import './App.css';
 import Login from './component/Login';
 import Signup from './component/Signup';
 import Complete from './component/Complete';
-import MainPage from './pages/MainPage';
 import './styles/global.css';
-import Scene4 from './pages/Scene4';
+import { MainPage, Reception } from './pages';
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/complete" element={<Complete />} />
-        <Route path="/scene4/:step" element={<Scene4 />} />
+        <Route path="/reception/:step" element={<Reception />} />
       </Routes>
     </Router>
   );

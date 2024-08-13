@@ -10,10 +10,7 @@ interface KioskLayoutProps {
   children: ReactNode;
 }
 
-const KioskLayout: React.FC<KioskLayoutProps> = ({
-  contentTitle,
-  children,
-}) => {
+function KioskLayout({ contentTitle, children }: KioskLayoutProps) {
   return (
     <KioskWrapper>
       <ContentWrapper>
@@ -23,7 +20,7 @@ const KioskLayout: React.FC<KioskLayoutProps> = ({
       </ContentWrapper>
     </KioskWrapper>
   );
-};
+}
 
 export default KioskLayout;
 
@@ -49,7 +46,7 @@ const ContentWrapper = styled.div`
   position: relative;
 `;
 
-export const ContentTitle = styled.p`
+const ContentTitle = styled.p`
   color: #000;
   text-align: center;
 `;
