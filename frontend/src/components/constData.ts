@@ -16,9 +16,9 @@ export const SCENE1_STEP_NAME = [
     advice: 'page1 advice',
   },
   {
-    stepTitle: '첫 번째 단계,',
-    stepSubtitle: '전화번호 입력하기',
-    stepDescription: '전화번호를 입력해주세요',
+    stepTitle: '모두 다',
+    stepSubtitle: '완료되었어요 🙇‍♀️',
+    stepDescription: '',
     advice: 'page2 advice',
   },
 ];

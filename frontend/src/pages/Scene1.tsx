@@ -1,28 +1,45 @@
+import { FloatingBtn, Header, KioskLayout, KeypadLayout, SCENE1_STEP_NAME } from '../components';
+import { useParams, useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
-import FloatingBtn from '../components/FloatingBtn';
-import Header from '../components/MainHeader';
-import { useParams } from 'react-router-dom';
-import KioskLayout from '../components/KioskLayout';
-import KeypadLayout from "../components/KeypadLayout";
-import { SCENE1_STEP_NAME } from '../components/constData';
-import YesNoButton from "../components/YesNoButton";
 
-const Step1 = () => {
+// Step1 컴포넌트
+const Step1: React.FC = () => {
+    const navigate = useNavigate();
+
+    const handleConfirm = (inputValue: string) => {
+        if (inputValue.length === 13) { // 전화번호가 올바른 형식(3-4-4, 총 13자)인지 확인
+            console.log('입력된 전화번호:', inputValue);
+            navigate('/scene1/2'); // 다음 스텝으로 이동
+        } else {
+            alert('올바른 전화번호를 입력해주세요.');
+        }
+    };
+
     return (
         <div>
-            <KeypadLayout />
-            <YesNoButton/>
+            <KeypadLayout onConfirm={handleConfirm} /> {/* onConfirm prop을 전달 */}
         </div>
     );
 };
 
 
+
 const Step2 = () => {
-    return <h1>this is step2</h1>;
+    // 랜덤 숫자 생성 (1에서 10 사이)
+    const randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    return (
+        <div>
+            <p style={{fontSize: '20px', margin: '0'}}>환자분의 대기 순번은</p>
+            <h1 style={{fontSize: '80px'}}>{randomNumber}번</h1>
+            <br/><br/>
+            <p style={{fontSize: '18px', margin: '0'}}>진료실로 들어가실 때 <br/>성함을 불러드립니다 ✨</p>
+        </div>
+    );
 };
 
 const StepComponent = () => {
-    const { step } = useParams(); //현재 페이지의 스텝 번호 받아오기
+    const {step} = useParams(); //현재 페이지의 스텝 번호 받아오기
     const stepName = SCENE1_STEP_NAME[Number(step) - 1];
 
     //n번째 단계, ... 부분
