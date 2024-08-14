@@ -1,8 +1,6 @@
 import styled from 'styled-components';
-import ButtonList from '../components/ButtonList';
-import { MAIN_CONTENT_LIST } from '../components/constData';
-
-import MainHeader from '../components/MainHeader';
+import { MAIN_CONTENT_LIST } from '../consts';
+import { ButtonList, MainHeader } from '../components/common';
 
 export default function MainPage() {
   return (
@@ -12,7 +10,7 @@ export default function MainPage() {
         <Title>
           김OO님, <br /> 무엇을 연습해볼까요?
         </Title>
-        <ButtonList contentList={MAIN_CONTENT_LIST} />
+        <ButtonList buttonType="main" contentList={MAIN_CONTENT_LIST} />
         <ImageContainer>
           <TeamLabel>@Team eldkiz</TeamLabel>
           <img src="images/main-image.png" />

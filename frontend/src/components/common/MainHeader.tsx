@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { FaArrowLeft } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
-export default function Header() {
+export default function MainHeader() {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate(-1);

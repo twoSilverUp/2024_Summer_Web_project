@@ -1,23 +1,22 @@
-import React from 'react';
 import styled from 'styled-components';
 
 interface ButtonProps {
   text: string;
+  onClick?: () => void;
 }
 
 //흰색 가로 버튼
-const MainButton: React.FC<ButtonProps> = ({ text }) => {
-  return <Button>{text}</Button>;
-};
+function SubButton({ text, onClick }: ButtonProps) {
+  return <Button onClick={onClick}>{text}</Button>;
+}
 
-export default MainButton;
+export default SubButton;
 
 const Button = styled.button`
   background-color: white;
-  width: 326px;
-  height: 52px;
+  width: 266px;
+  height: 44px;
   border: 2px solid #d0d0d0;
-  border-radius: 10px;
   font-size: 18px;
   box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.5);
   color: #091430;
