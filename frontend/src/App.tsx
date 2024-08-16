@@ -1,8 +1,8 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'; // Import BrowserRouter as Router
 import './App.css';
-import Login from './component/Login';
-import Signup from './component/Signup';
-import Complete from './component/Complete';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
+import Complete from './pages/Complete';
 import './styles/global.css';
 import { MainPage, Reception } from './pages';
 
