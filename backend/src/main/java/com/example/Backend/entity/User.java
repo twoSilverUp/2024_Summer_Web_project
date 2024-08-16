@@ -12,7 +12,7 @@ import lombok.*;
 @NoArgsConstructor  //매개변수가 아예 없는 기본 생성자 자동 생성
 public class User {
     @Id
-    private int id;
+    private String id;
     @Column
     private String pw;
     @Column

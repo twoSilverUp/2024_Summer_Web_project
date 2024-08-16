@@ -1,9 +1,4 @@
-import React from 'react';
 import styled from 'styled-components';
-
-interface ButtonProps {
-  text: string;
-}
 
 //흰색 가로 버튼
 function MainButton({ text }: { text: string }) {

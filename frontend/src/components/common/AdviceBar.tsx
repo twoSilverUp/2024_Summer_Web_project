@@ -10,9 +10,9 @@ interface AdviceBarProps {
 
 function AdviceBar({ advice, isOpen, onClose }: AdviceBarProps) {
   const closeBtn = (
-      <Button onClick={onClose} color="primary" size="large">
-        <SnackBarText>닫기</SnackBarText>
-      </Button>
+    <Button onClick={onClose} color="primary" size="large">
+      <SnackBarText>닫기</SnackBarText>
+    </Button>
   );
 
   return (
