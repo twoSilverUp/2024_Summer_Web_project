@@ -10,6 +10,9 @@ version = '0.0.1-SNAPSHOT'
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(17)
+		if (JavaVersion.current().isCompatibleWith(JavaVersion.VERSION_20)) {
+			languageVersion = JavaLanguageVersion.of(20)
+		}
 	}
 }
 
@@ -26,6 +29,15 @@ dependencies {
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 	compileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+}
+
+jar {
+	manifest {
+		attributes(
+				'Main-Class': 'com.example.BackendApplication' // 실제 메인 클래스 이름으로 변경
+		)
+	}
 }
 
 tasks.named('test') {

@@ -11,7 +11,7 @@ import lombok.ToString;
 @Getter                 //getter 메서드 자동 생성
 @ToString               //클래스의 모든 필드 포함하는 'toString()'메서드 자동 생성
 public class UserDto {
-    private int id;
+    private String id;
     private String pw;
     private String name;
     private String phone;
