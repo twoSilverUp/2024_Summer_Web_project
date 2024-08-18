@@ -27,7 +27,7 @@
 </div>
 
 <div style="text-align: left;">
-    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧶 Menu Structure </h2> <br> 
+    <h2 style="border-bottom: 1px solid #d8dee4; color: #282d33;"> 🧶 Menu Structure </h2>
     <div align="center"> 
         <img src="https://github.com/user-attachments/assets/1b64671a-25ea-4484-90fb-36782372548e" alt="menu structure">
     </div>
