@@ -19,8 +19,6 @@
         <img src="https://img.shields.io/badge/MySQL-4479A1?style=flat&logo=MySQL&logoColor=white">
         <img src="https://img.shields.io/badge/Java-007396?style=flat&logo=Java&logoColor=white">
         <br/>
-        <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues/Kioooosk/2024-Summer">
-        <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-closed/Kioooosk/2024-Summer">
         <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-pr/Kioooosk/2024-Summer">
         <img alt="GitHub Issues or Pull Requests" src="https://img.shields.io/github/issues-pr-closed/Kioooosk/2024-Summer">
     </div>
