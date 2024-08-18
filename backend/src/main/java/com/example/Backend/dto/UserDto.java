@@ -1,7 +1,6 @@
 package com.example.Backend.dto;
 
 import com.example.Backend.entity.User;
-import jakarta.persistence.Id;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Pattern;
