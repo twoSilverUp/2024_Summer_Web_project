@@ -10,17 +10,19 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import java.util.Optional;
 
 @RestController
 public class SigninController {
     @Autowired
     private UserService userService;
+    @Autowired
     UserRepository userRepository;
+    @Autowired
     JwtTokenProvider jwtTokenProvider;
     // 회원 정보 저장
     @Transactional
@@ -30,7 +32,7 @@ public class SigninController {
         boolean result = userService.validatePw(dto.getId(),dto.getPw());
         // 응답: 401 에러
         if (!result) {
-            throw new UserNotFoundException("올바른 비밀번호를 기입해주세요.");
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("올바른 비밀번호를 기입해주세요.");  // 500 Internal Server Error
         }
 
         // 토큰 발행
@@ -40,7 +42,13 @@ public class SigninController {
         String role = user.getRole().name();
         String token = jwtTokenProvider.createToken(dto.getId(), role);
 
+        // 응답: 200 성공
         return ResponseEntity.status(HttpStatus.OK).body("jwtAccessToken: "+token);
     }
 
+    // 응답: 404 에러
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<String> handleUserNotFoundException(UserNotFoundException ex){
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body(ex.getMessage());
+    }
 }

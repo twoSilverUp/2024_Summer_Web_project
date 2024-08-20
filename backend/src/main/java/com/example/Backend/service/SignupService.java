@@ -13,11 +13,11 @@ import org.springframework.stereotype.Service;
 public class SignupService {
     @Autowired
     UserRepository userRepository;  // userRepository 객체 주입
-    private final BCryptPasswordEncoder passwordEncoder;
+    private final BCryptPasswordEncoder encoder;
     @Autowired  // Constructor Injection
-    public SignupService(UserRepository userRepository, BCryptPasswordEncoder passwordEncoder) {
+    public SignupService(UserRepository userRepository, BCryptPasswordEncoder encoder) {
         this.userRepository = userRepository;
-        this.passwordEncoder = passwordEncoder;
+        this.encoder = encoder;
     }
 
     public User create(UserDto dto) {
@@ -34,8 +34,10 @@ public class SignupService {
             throw new DuplicateIdException("Duplicate ID exists.");
         }
 
-        // 비밀번호 암호화 (null 체크 후 진행)
-        user.setPw(passwordEncoder.encode(dto.getPw()));
+        // 비밀번호, 전화번호, 주민번호 암호화 (null 체크 후 진행)
+        user.setPw(encoder.encode(dto.getPw()));
+        user.setPhone(encoder.encode(dto.getPhone()));
+        user.setSsn(encoder.encode(dto.getSsn()));
 
         // User 권한 member로 지정
         user.addUserAuthority();
