@@ -18,7 +18,7 @@ public class SignupController {
     @Autowired
     private SignupService signupService;
     // 회원 정보 저장
-    @PostMapping("/hollo/signup")
+    @PostMapping("/signup")
     public ResponseEntity<User> create(@RequestBody UserDto dto){
         // 서비스에 위임
         User createdUser = signupService.create(dto);
