@@ -37,6 +37,9 @@ public class SignupService {
         // 비밀번호 암호화 (null 체크 후 진행)
         user.setPw(passwordEncoder.encode(dto.getPw()));
 
+        // User 권한 member로 지정
+        user.addUserAuthority();
+
         // 유저 저장
         return userRepository.save(user);
     }

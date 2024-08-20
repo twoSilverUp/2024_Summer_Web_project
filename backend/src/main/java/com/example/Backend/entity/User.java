@@ -3,9 +3,12 @@ package com.example.Backend.entity;
 import jakarta.persistence.*;
 import lombok.*;
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 @Entity     //해당 클래스가 엔티티임을 선언, 클래스 필드를 바탕으로 DB에 테이블 생성
 @Table(name = "USER")  // 테이블 이름을 USER로 변경
@@ -15,7 +18,6 @@ import java.util.Collection;
 @AllArgsConstructor //모든 필드를 매개변수로 갖는 생성자 자동 생성
 @NoArgsConstructor  //매개변수가 아예 없는 기본 생성자 자동 생성
 public class User implements UserDetails {
-
     @Id
     @Column(nullable = false, unique = true) // ID는 고유해야 하므로 unique 제약조건 추가
     private String id;
@@ -36,11 +38,20 @@ public class User implements UserDetails {
     @Column
     private String ssn;
 
+    @Enumerated(EnumType.STRING)
+    private Role role;
+
+    public void addUserAuthority() {
+        this.role = Role.ROLE_USER;
+    }
+
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        // return your user's roles/authorities here
-        return null;
+        List<GrantedAuthority> auth = new ArrayList<>();
+        auth.add(new SimpleGrantedAuthority(role.name()));
+        return auth;
     }
+
     @Override
     public String getPassword() {
         return pw;
