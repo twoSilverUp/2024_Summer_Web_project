@@ -14,6 +14,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/regi_on")
+@CrossOrigin(origins ="*", methods={RequestMethod.GET})
 @Validated
 public class OnSiteRegistrationController {
 
